@@ -1,0 +1,83 @@
+// --- Header ---
+.nav-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1vw 1rem 2.5vw;
+
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    &__logo img {
+      margin-right: 2rem;
+      height: 4rem;
+    }
+    .ui.input > input {
+      background-color: #e7e7e787 !important;
+      border: none !important;
+    }
+    .ui.basic.button {
+      background-color: #e7e7e787 !important;
+      border: none;
+      box-shadow: none;
+    }
+    &__search {
+      margin-right: auto;
+      gap: 0.5rem;
+      padding: 0.4rem;
+      width: 25rem;
+    }
+    .ui.menu {
+      border: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    .ui.menu .item {
+      padding: 0px 10px 0;
+      cursor: default;
+    }
+
+    &__cart {
+      cursor: pointer;
+      img {
+        width: 2.19rem;
+      }
+      .ui.menu .item > .label {
+        border-radius: 50rem !important;
+      }
+    }
+
+    &__dropdown {
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      img {
+        position: relative;
+        top: 4px;
+        margin: 0 auto;
+      }
+      .ui.dropdown .menu .active.item,
+      .ui.dropdown .menu .selected.item,
+      .ui.dropdown.selected {
+        font-weight: normal !important;
+        color: #414141;
+      }
+    }
+
+    @media screen and (max-width: 645px) {
+      padding: 0;
+
+      &__search {
+        width: calc(100% - 2vw);
+        order: 3;
+      }
+
+      &__logo {
+        margin-right: auto;
+      }
+    }
+  }
+}

@@ -1,16 +1,26 @@
 import axios from "axios"
 import * as actions from "../constants/itemConstants.js"
 
-const listItems = () => async (dispatch) => {
+const listItems = (keyword = "", pageNumber = "") => async (dispatch) => {
   try {
-    const { data } = await axios.get(`/api/items`)
+    dispatch({ type: actions.ITEM_LIST_REQUEST })
+
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_API}/items?keyword=${keyword}&pageNumber=${pageNumber}`
+    )
 
     dispatch({
       type: actions.ITEM_LIST_SUCCESS,
       payload: data,
     })
   } catch (error) {
-    console.log("big fat error")
+    dispatch({
+      type: actions.ITEM_LIST_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    })
   }
 }
 
