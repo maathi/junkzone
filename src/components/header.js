@@ -7,16 +7,16 @@ import { logoutAction } from "../actions/userActions"
 const Header = ({ history }) => {
   const [keyword, setKeyword] = useState("")
 
-  //   const { cartItems } = useSelector((state) => state.cart)
+  const { cartItems } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
-  //   const itemList = useSelector((state) => state.itemList)
-  //   const { loading } = itemList
+  // const itemList = useSelector((state) => state.itemList)
+  // const { loading } = itemList
 
-  //   const cartItemsNum = String(cartItems.reduce((a, { qty }) => a + qty, 0))
+  const cartItemsNum = String(cartItems.reduce((a, { qty }) => a + qty, 0))
 
   const trigger = (
     <>
@@ -63,7 +63,7 @@ const Header = ({ history }) => {
           </Form.Field>
         </Form>
 
-        {/* <div className="nav__cart">
+        <div className="nav__cart">
           <Menu compact>
             <Menu.Item>
               <Link to="/cart">
@@ -78,7 +78,7 @@ const Header = ({ history }) => {
               )}
             </Menu.Item>
           </Menu>
-        </div> */}
+        </div>
         <div className="nav__dropdown">
           <Menu>
             <Dropdown

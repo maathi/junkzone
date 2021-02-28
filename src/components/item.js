@@ -3,6 +3,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 const Item = ({ item }) => {
+  function handleAddToCart() {}
   return (
     <div className="card">
       <div className="card__image">
