@@ -21,7 +21,7 @@ const CartItems = ({ items }) => {
     <>
       <div className="cart">
         <div className="cart-image">
-          <Link to={`/product/${items.product}`}>
+          <Link to={`/item/${items._id}`}>
             <img
               src={`${process.env.REACT_APP_STORAGE}/${items.image}?alt=media`}
               alt=""

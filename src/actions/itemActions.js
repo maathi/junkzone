@@ -45,7 +45,7 @@ const listItemDetails = (id) => async (dispatch) => {
   }
 }
 
-const Itemreview = (id, review) => async (dispatch, getState) => {
+const itemreview = (id, review) => async (dispatch, getState) => {
   try {
     dispatch({ type: actions.ITEM_REVIEW_REQUEST })
 
@@ -79,4 +79,4 @@ const Itemreview = (id, review) => async (dispatch, getState) => {
     })
   }
 }
-export { listItems }
+export { listItems, itemreview, listItemDetails }

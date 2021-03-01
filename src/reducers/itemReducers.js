@@ -24,4 +24,51 @@ const itemListReducer = (state = { items: [] }, action) => {
   }
 }
 
-export { itemListReducer }
+const itemDetailsReducer = (state = { item: { reviews: [] } }, action) => {
+  switch (action.type) {
+    case actions.ITEM_DETAILS_REQUEST:
+      return {
+        loading: true,
+        ...state,
+      }
+    case actions.ITEM_DETAILS_SUCCESS:
+      return {
+        loading: false,
+        item: action.payload,
+      }
+    case actions.ITEM_DETAILS_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      }
+    case actions.ITEM_DETAILS_RESET:
+      return {}
+
+    default:
+      return state
+  }
+}
+
+const itemReviewReducer = (state = {}, action) => {
+  switch (action.type) {
+    case actions.ITEM_REVIEW_REQUEST:
+      return {
+        loading: true,
+      }
+    case actions.ITEM_REVIEW_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+      }
+    case actions.ITEM_REVIEW_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      }
+    case actions.ITEM_REVIEW_RESET:
+      return {}
+    default:
+      return state
+  }
+}
+export { itemListReducer, itemReviewReducer, itemDetailsReducer }
