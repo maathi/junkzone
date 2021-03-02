@@ -90,7 +90,7 @@ const Header = ({ history }) => {
               {userInfo && userInfo.isAdmin ? (
                 <Dropdown.Menu>
                   <Dropdown.Header>
-                    Signed in as{" "}
+                    Signed in as &nbsp;
                     <strong>
                       {userInfo.name.split(" ")[1] || userInfo.name}
                     </strong>
@@ -120,7 +120,7 @@ const Header = ({ history }) => {
               ) : userInfo ? (
                 <Dropdown.Menu>
                   <Dropdown.Header>
-                    Signed in as
+                    Signed in as &nbsp;
                     <strong>
                       {userInfo.name.split(" ")[1] || userInfo.name}
                     </strong>
@@ -138,7 +138,7 @@ const Header = ({ history }) => {
                 </Dropdown.Menu>
               ) : (
                 <Dropdown.Menu>
-                  <Dropdown.Header>Welcome to Rn Store</Dropdown.Header>
+                  <Dropdown.Header>Welcome to the Junkzone</Dropdown.Header>
                   <Dropdown.Item as={Link} to="/login">
                     Sign In
                   </Dropdown.Item>

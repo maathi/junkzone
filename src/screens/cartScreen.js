@@ -22,10 +22,7 @@ const CartScreen = ({ match, location, history }) => {
 
   useEffect(() => {
     if (productId) {
-      // dispatch(addToCart(productId, queryString))
-      dispatch(addToCart("6031512f47e7886154f15aac", 2))
-      dispatch(addToCart("60350bc7332dc449435c81da", 3))
-      dispatch(addToCart("6031512f47e7886154f15aac", 2))
+      dispatch(addToCart(productId, queryString))
     }
   }, [location, match, dispatch, productId, queryString])
 

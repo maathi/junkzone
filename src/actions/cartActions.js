@@ -2,6 +2,7 @@ import axios from "axios"
 import * as actions from "../constants/cartConstants"
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
+  console.log(`${process.env.REACT_APP_API}/items/${id}`, "<<<<")
   const { data } = await axios.get(`${process.env.REACT_APP_API}/items/${id}`)
   dispatch({
     type: actions.CART_ADD_REQUEST,
