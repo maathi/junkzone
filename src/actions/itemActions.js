@@ -79,4 +79,36 @@ const itemreview = (id, review) => async (dispatch, getState) => {
     })
   }
 }
-export { listItems, itemreview, listItemDetails }
+
+const itemAdd = (item) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: actions.ITEM_ADD_REQUEST })
+
+    const {
+      userLogin: { userInfo },
+    } = getState()
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    }
+
+    let newItem = await axios.post(
+      `${process.env.REACT_APP_API}/items`,
+      item,
+      config
+    )
+    dispatch({ type: actions.ITEM_ADD_SUCCESS, payload: newItem })
+  } catch (error) {
+    dispatch({
+      type: actions.ITEM_ADD_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    })
+  }
+}
+export { listItems, itemreview, listItemDetails, itemAdd }

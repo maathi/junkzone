@@ -503,4 +503,13 @@ footer li:hover {
   }
 }
 
+#new-item {
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+#new-item input {
+  margin: 0.5rem auto;
+}
+
 /*# sourceMappingURL=style.css.map */

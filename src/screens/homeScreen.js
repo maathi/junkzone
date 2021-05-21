@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Item from "../components/item"
-import { listItems } from "../actions/itemActions"
+import { listItems, itemAdd } from "../actions/itemActions"
 import { Message } from "semantic-ui-react"
 import Loader from "../components/loader"
 import Paginate from "../components/paginate"
@@ -44,7 +44,6 @@ const HomeScreen = ({ match }) => {
             />
           )}
           <div className="card-container">
-            {console.log(items)}
             {items
               .sort((a, b) => b.price - a.price)
               .filter((r) => r.name !== "Sample name")

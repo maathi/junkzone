@@ -71,4 +71,23 @@ const itemReviewReducer = (state = {}, action) => {
       return state
   }
 }
-export { itemListReducer, itemReviewReducer, itemDetailsReducer }
+
+const itemAddReducer = (state = {}, action) => {
+  switch (action.type) {
+    case actions.ITEM_ADD_REQUEST:
+      return { loading: true, item: {} }
+    case actions.ITEM_ADD_SUCCESS:
+      return { loading: false, item: action.payload }
+    case actions.ITEM_ADD_FAIL:
+      return { loading: false, error: action.payload }
+    default:
+      return state
+  }
+}
+
+export {
+  itemListReducer,
+  itemReviewReducer,
+  itemDetailsReducer,
+  itemAddReducer,
+}
