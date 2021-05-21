@@ -36,12 +36,12 @@ backend code can be found at [Junkzone-api](https://github.com/maathi/junkzone-a
 
 3. create `.env` file at the root of your project, copy and edit the following variables accordingly :
 
-4. run `npm start` to start the application.
-
 ```jsx
 REACT_APP_API=[your backend api endpoint]
 REACT_APP_STORAGE=[storage url]
 ```
+
+4. run `npm start` to start the application.
 
 ### Inspired by
 
